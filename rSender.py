@@ -142,9 +142,15 @@ class Sender:
                     - Reset timeout timer
                     - Continue to wait for ACKs
                     """
-                    raise NotImplementedError("Checkpoint 4: Packet Loss Recovery not implemented")
+                    #raise NotImplementedError("Checkpoint 4: Packet Loss Recovery not implemented")
 
                     # YOUR CODE HERE (within 10 lines)
+                    # retransmit all packets in window
+                    for packet in window:
+                        self.send_packet(packet) # retransmit     
+                    timeout_start = time.time()  # reset
+                    # continue waiting for ACKs
+                    continue
 
                     # END OF YOUR CODE
 
