@@ -200,9 +200,26 @@ class Sender:
                         if len(packets) == 0:  # Special case for checkpoint 1 (no data packets)
                             break
 
-                        raise NotImplementedError("Checkpoint 2 & 3: Sliding Window not implemented")
+                        #raise NotImplementedError("Checkpoint 2 & 3: Sliding Window not implemented")
 
                         # YOUR CODE HERE 
+                        # check if advances our window
+                        if ack.seq_num > left:
+                            # update the left, right, and sliding window values
+                            left = ack.seq_num
+                            
+                            # checks if all packets have been acked if left is passed length of packet
+                            if left >= len(packets):
+                                break 
+                            right = min(left + self.window_size, len(packets))
+                            window = packets[left:right] # from left ACK value to the right
+                            
+                            timeout_start = time.time()  # reset
+                            rtt_start_time = None # reset
+                            rtt_landmark_seq = 0 # reset
+                            
+                            break
+                            
                         
                         # END OF YOUR CODE
 
