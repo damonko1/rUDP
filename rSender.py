@@ -146,9 +146,12 @@ class Sender:
 
                     # YOUR CODE HERE (within 10 lines)
                     # retransmit all packets in window
-                    for packet in window:
-                        self.send_packet(packet) # retransmit     
-                    timeout_start = time.time()  # reset
+                    for pkt in window:
+                        self.send_packet(pkt)
+                    # Reset timeout timer
+                    timeout_start = time.time()
+                    rtt_start_time = None
+                    rtt_landmark_seq = 0
                     # continue waiting for ACKs
                     continue
 
@@ -176,16 +179,26 @@ class Sender:
                             - Log RTT measurements using self.log_rtt()
                             - Reset rtt_start_time to None after calculation
                             """
-                            raise NotImplementedError("Checkpoint 5: RTT Estimation not implemented")
-                        
-                            deviation = 0
-                            change = 0
+                            #raise NotImplementedError("Checkpoint 5: RTT Estimation not implemented")
+
 
                             # YOUR CODE HERE (within 10 lines)
+                            # calc sample rtt
+                            sample = time.time() - rtt_start_time
+                            old_est = self.estimated_rtt
+                            self.sample_rtt = sample
+                            self.estimated_rtt = (1 - self.alpha) * self.estimated_rtt + self.alpha * sample
+                            deviation = sample - self.estimated_rtt
+                            change = self.estimated_rtt - old_est
+                            rtt_start_time = None
+                            rtt_landmark_seq = 0
+                            
                             
                             # END OF YOUR CODE
 
                             self.log_rtt(f"Sample: {self.sample_rtt*1000:.2f}ms | Estimated: {self.estimated_rtt*1000:.2f}ms | Deviation: {deviation*1000:+.2f}ms | Change: {change*1000:+.2f}ms")
+                            
+
 
                         """
                         Checkpoint 2 & 3: Handle ACK and Slide Window
@@ -211,6 +224,7 @@ class Sender:
                         # YOUR CODE HERE 
                         # check if advances our window
                         if ack.seq_num > left:
+                            
                             # update the left, right, and sliding window values
                             left = ack.seq_num
                             
