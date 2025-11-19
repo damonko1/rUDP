@@ -150,8 +150,9 @@ class Sender:
                         self.send_packet(pkt)
                     # Reset timeout timer
                     timeout_start = time.time()
-                    rtt_start_time = None
-                    rtt_landmark_seq = 0
+                    if self.rtt_enabled:
+                        rtt_start_time = None
+                        rtt_landmark_seq = 0
                     # continue waiting for ACKs
                     continue
 
@@ -187,11 +188,14 @@ class Sender:
                             sample = time.time() - rtt_start_time
                             old_est = self.estimated_rtt
                             self.sample_rtt = sample
+                            
                             self.estimated_rtt = (1 - self.alpha) * self.estimated_rtt + self.alpha * sample
                             deviation = sample - self.estimated_rtt
                             change = self.estimated_rtt - old_est
+                            
                             rtt_start_time = None
                             rtt_landmark_seq = 0
+                            
                             
                             
                             # END OF YOUR CODE
@@ -228,17 +232,24 @@ class Sender:
                             # update the left, right, and sliding window values
                             left = ack.seq_num
                             
-                            # checks if all packets have been acked if left is passed length of packet
-                            if left >= len(packets):
-                                break 
+                            
                             right = min(left + self.window_size, len(packets))
                             window = packets[left:right] # from left ACK value to the right
                             
-                            timeout_start = time.time()  # reset
-                            rtt_start_time = None # reset
-                            rtt_landmark_seq = 0 # reset
+                            # checks if all packets have been acked if left is passed length of packet
+                            if left >= len(packets):
+                                break 
                             
-                            break
+                            
+                            for i, pkt in enumerate(window):
+                                self.send_packet(pkt)
+                                if self.rtt_enabled and i == 0:
+                                    rtt_start_time = time.time()
+                                    rtt_landmark_seq = pkt.seq_num
+                            
+                            timeout_start = time.time()  # reset
+                            
+                            #break
                             
                         
                         # END OF YOUR CODE
