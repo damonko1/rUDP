@@ -1,9 +1,8 @@
-0 1590467227 0 0
-0 1590467227 0 0
-0 1590467227 0 0
-0 1590467227 0 0
-0 1590467227 0 0
-3 1590467227 0 0
+0 78208505 0 0
+0 78208505 0 0
+0 78208505 0 0
+0 78208505 0 0
+3 78208505 0 0
 2 0 1456 1007272849
 2 1 1456 3903861548
 2 2 1456 1864464095
@@ -13,12 +12,11 @@
 2 6 1456 1348452146
 2 7 1456 3605988491
 2 8 1070 365755523
-3 1590467227 0 0
-3 1590467227 0 0
-3 1590467227 0 0
-3 1590467227 0 0
+3 78208505 0 0
+3 78208505 0 0
+3 78208505 0 0
 3 1 0 0
-RTT Sample: 245.92ms | Estimated: 468.24ms | Deviation: -222.32ms | Change: -31.76ms
+RTT Sample: 216.24ms | Estimated: 464.53ms | Deviation: -248.29ms | Change: -35.47ms
 2 1 1456 3903861548
 2 2 1456 1864464095
 2 3 1456 1961014244
@@ -28,7 +26,7 @@ RTT Sample: 245.92ms | Estimated: 468.24ms | Deviation: -222.32ms | Change: -31.
 2 7 1456 3605988491
 2 8 1070 365755523
 3 2 0 0
-RTT Sample: 58.75ms | Estimated: 417.05ms | Deviation: -358.31ms | Change: -51.19ms
+RTT Sample: 42.75ms | Estimated: 411.81ms | Deviation: -369.06ms | Change: -52.72ms
 2 2 1456 1864464095
 2 3 1456 1961014244
 2 4 1456 1943323181
@@ -37,7 +35,7 @@ RTT Sample: 58.75ms | Estimated: 417.05ms | Deviation: -358.31ms | Change: -51.1
 2 7 1456 3605988491
 2 8 1070 365755523
 3 3 0 0
-RTT Sample: 52.19ms | Estimated: 371.45ms | Deviation: -319.25ms | Change: -45.61ms
+RTT Sample: 52.74ms | Estimated: 366.92ms | Deviation: -314.19ms | Change: -44.88ms
 2 3 1456 1961014244
 2 4 1456 1943323181
 2 5 1456 1176548876
@@ -45,39 +43,39 @@ RTT Sample: 52.19ms | Estimated: 371.45ms | Deviation: -319.25ms | Change: -45.6
 2 7 1456 3605988491
 2 8 1070 365755523
 3 4 0 0
-RTT Sample: 61.02ms | Estimated: 332.64ms | Deviation: -271.63ms | Change: -38.80ms
+RTT Sample: 45.44ms | Estimated: 326.74ms | Deviation: -281.30ms | Change: -40.19ms
 2 4 1456 1943323181
 2 5 1456 1176548876
 2 6 1456 1348452146
 2 7 1456 3605988491
 2 8 1070 365755523
 3 5 0 0
-RTT Sample: 69.90ms | Estimated: 299.80ms | Deviation: -229.90ms | Change: -32.84ms
+RTT Sample: 60.89ms | Estimated: 293.51ms | Deviation: -232.61ms | Change: -33.23ms
 2 5 1456 1176548876
 2 6 1456 1348452146
 2 7 1456 3605988491
 2 8 1070 365755523
 3 6 0 0
-RTT Sample: 37.30ms | Estimated: 266.99ms | Deviation: -229.69ms | Change: -32.81ms
+RTT Sample: 60.97ms | Estimated: 264.44ms | Deviation: -203.47ms | Change: -29.07ms
 2 6 1456 1348452146
 2 7 1456 3605988491
 2 8 1070 365755523
 3 7 0 0
-RTT Sample: 54.85ms | Estimated: 240.47ms | Deviation: -185.62ms | Change: -26.52ms
+RTT Sample: 60.09ms | Estimated: 238.90ms | Deviation: -178.80ms | Change: -25.54ms
 2 7 1456 3605988491
 2 8 1070 365755523
 3 8 0 0
-RTT Sample: 56.07ms | Estimated: 217.42ms | Deviation: -161.35ms | Change: -23.05ms
+RTT Sample: 43.01ms | Estimated: 214.41ms | Deviation: -171.40ms | Change: -24.49ms
 2 8 1070 365755523
 3 9 0 0
-RTT Sample: 56.50ms | Estimated: 197.30ms | Deviation: -140.80ms | Change: -20.11ms
-1 1590467227 0 0
-1 1590467227 0 0
-1 1590467227 0 0
-1 1590467227 0 0
-1 1590467227 0 0
-1 1590467227 0 0
-1 1590467227 0 0
-1 1590467227 0 0
-1 1590467227 0 0
-1 1590467227 0 0
+RTT Sample: 65.93ms | Estimated: 195.85ms | Deviation: -129.92ms | Change: -18.56ms
+1 78208505 0 0
+1 78208505 0 0
+1 78208505 0 0
+1 78208505 0 0
+1 78208505 0 0
+1 78208505 0 0
+1 78208505 0 0
+1 78208505 0 0
+1 78208505 0 0
+1 78208505 0 0
